@@ -97,7 +97,7 @@ func TestConnection_SendBlocksRequest(t *testing.T) {
 					t.Fatal(err)
 				}
 			}
-		case b, ok := <-conn.Block:
+		case b, ok := <-conn.Blocks:
 			if ok {
 				rb = b
 				break
@@ -145,7 +145,7 @@ func TestConnection_SendAckBlocksRequest(t *testing.T) {
 					t.Fatal(err)
 				}
 			}
-		case b, ok := <-conn.Block:
+		case b, ok := <-conn.Blocks:
 			if ok {
 				rb = b
 				count++

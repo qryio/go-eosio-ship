@@ -2,6 +2,8 @@ package types
 
 import "github.com/greymass/go-eosio/pkg/chain"
 
+const MaxBlockNum = 0xffffffff
+
 type BlockPosition struct {
 	BlockNum chain.BlockNum
 	BlockId	 chain.Checksum256

@@ -18,9 +18,9 @@ type Connection struct {
 	wsConn	*websocket.Conn
 
 	Error  	chan error
-	Ready	chan *chain.Abi
-	Block	chan *types.GetBlocksResult
-	Status	chan *types.GetStatusResult
+	Ready  chan *chain.Abi
+	Blocks chan *types.GetBlocksResult
+	Status chan *types.GetStatusResult
 }
 
 func NewConnection(address string, port int) *Connection {
@@ -43,7 +43,7 @@ func (c *Connection) Open() error {
 	c.wsConn = wsConn
 	c.Error  = make(chan error)
 	c.Ready  = make(chan *chain.Abi)
-	c.Block  = make(chan *types.GetBlocksResult)
+	c.Blocks = make(chan *types.GetBlocksResult)
 	c.Status = make(chan *types.GetStatusResult)
 	go c.reader()
 	return nil
@@ -58,8 +58,8 @@ func (c *Connection) Close() {
 	_ = wsConn.Close()
 	close(c.Ready)
 	c.Ready = nil
-	close(c.Block)
-	c.Block = nil
+	close(c.Blocks)
+	c.Blocks = nil
 	close(c.Status)
 	c.Status = nil
 	close(c.Error)
@@ -126,7 +126,7 @@ func (c *Connection) reader() {
 						BlockId:  mpb["block_id"].(chain.Checksum256),
 					}
 				}
-				c.Block <- &types.GetBlocksResult{
+				c.Blocks <- &types.GetBlocksResult{
 					Head:                 types.BlockPosition{
 						BlockNum: chain.BlockNum(h["block_num"].(uint32)),
 						BlockId:  h["block_id"].(chain.Checksum256),
