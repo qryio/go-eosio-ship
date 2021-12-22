@@ -1,6 +1,6 @@
 module github.com/qryio/go-eosio-ship
 
-go 1.14
+go 1.17
 
 require (
 	github.com/fasthttp/websocket v1.4.3
