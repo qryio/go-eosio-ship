@@ -5,11 +5,7 @@ on:
 name: Test
 jobs:
   test:
-    strategy:
-      matrix:
-        go-version: [1.17.x]
-        os: [ubuntu-latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - name: Pull qyrio/eosio-dev
         run: docker pull qryio/eosio-dev:latest
