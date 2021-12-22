@@ -56,14 +56,9 @@ func (c *Connection) Close() {
 	wsConn := c.wsConn
 	c.wsConn = nil
 	_ = wsConn.Close()
-	close(c.Ready)
-	c.Ready = nil
 	close(c.Blocks)
-	c.Blocks = nil
 	close(c.Status)
-	c.Status = nil
 	close(c.Error)
-	c.Error = nil
 }
 
 func (c *Connection) reader() {
