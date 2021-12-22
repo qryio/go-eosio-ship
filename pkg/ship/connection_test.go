@@ -9,7 +9,7 @@ import (
 )
 
 func TestConnection_Open(t *testing.T) {
-	sp := test.StartEosio(t)
+	sp, _ := test.StartEosio(t)
 	defer test.StopEosio(t)
 	conn := NewConnection("localhost", sp)
 	err := conn.Open()
@@ -33,7 +33,7 @@ func TestConnection_Open(t *testing.T) {
 }
 
 func TestConnection_SendStatusRequest(t *testing.T) {
-	sp := test.StartEosio(t)
+	sp, _ := test.StartEosio(t)
 	defer test.StopEosio(t)
 	conn := NewConnection("localhost", sp)
 	err := conn.Open()
@@ -70,7 +70,7 @@ func TestConnection_SendStatusRequest(t *testing.T) {
 }
 
 func TestConnection_SendBlocksRequest(t *testing.T) {
-	sp := test.StartEosio(t)
+	sp, _ := test.StartEosio(t)
 	defer test.StopEosio(t)
 	conn := NewConnection("localhost", sp)
 	err := conn.Open()
@@ -117,7 +117,7 @@ func TestConnection_SendBlocksRequest(t *testing.T) {
 }
 
 func TestConnection_SendAckBlocksRequest(t *testing.T) {
-	sp := test.StartEosio(t)
+	sp, _ := test.StartEosio(t)
 	defer test.StopEosio(t)
 	conn := NewConnection("localhost", sp)
 	err := conn.Open()

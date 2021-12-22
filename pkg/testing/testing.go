@@ -17,7 +17,7 @@ var (
 	testRes		*dockertest.Resource
 )
 
-func StartEosio(t *testing.T) int {
+func StartEosio(t *testing.T) (int, int) {
 	pool, err := dockertest.NewPool("")
 	if err != nil {
 		t.Fatalf("Could not connect to docker: %s", err)
@@ -85,7 +85,7 @@ func StartEosio(t *testing.T) int {
 	testPool = pool
 	testRes = res
 
-	return shipPort
+	return shipPort, testRpcPort
 }
 
 func StopEosio(t *testing.T) {
