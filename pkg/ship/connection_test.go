@@ -150,7 +150,9 @@ func TestConnection_SendAckBlocksRequest(t *testing.T) {
 				rb = b
 				count++
 				if count < 2 {
-					err = conn.SendAckBlocksRequest(1)
+					err = conn.SendAckBlocksRequest(&types.GetBlocksAckRequest{
+						NumMessages: 1,
+					})
 					if err != nil {
 						t.Fatal(err)
 					}
