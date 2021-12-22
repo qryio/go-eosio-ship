@@ -200,9 +200,9 @@ func (c *Connection) SendBlocksRequest(request *types.GetBlocksRequest) error {
 	})
 }
 
-func (c *Connection) SendAckBlocksRequest(numMessages int) error {
+func (c *Connection) SendAckBlocksRequest(request *types.GetBlocksAckRequest) error {
 	return c.SendRequest("get_blocks_ack_request_v0", map[string]interface{}{
-		"num_messages": uint32(numMessages),
+		"num_messages": request.NumMessages,
 	})
 }
 
