@@ -1,4 +1,4 @@
-module github.com/qryio/go-eosio-ship
+module github.com/tsouza/go-eosio-ship
 
 go 1.17
 

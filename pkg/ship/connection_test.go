@@ -2,8 +2,8 @@ package ship
 
 import (
 	"github.com/greymass/go-eosio/pkg/chain"
-	test "github.com/qryio/go-eosio-ship/pkg/testing"
-	"github.com/qryio/go-eosio-ship/pkg/types"
+	test "github.com/tsouza/go-eosio-ship/pkg/testing"
+	"github.com/tsouza/go-eosio-ship/pkg/types"
 	"github.com/test-go/testify/assert"
 	"testing"
 )

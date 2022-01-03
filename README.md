@@ -1,4 +1,4 @@
-# go-eosio-ship [![GoDoc](https://godoc.org/github.com/qryio/go-eosio-ship?status.svg)](https://godoc.org/github.com/qryio/go-eosio-ship) [![Test](https://github.com/qryio/go-eosio-ship/actions/workflows/test.yml/badge.svg)](https://github.com/qryio/go-eosio-ship/actions/workflows/test.yml)
+# go-eosio-ship [![GoDoc](https://godoc.org/github.com/tsouza/go-eosio-ship?status.svg)](https://godoc.org/github.com/tsouza/go-eosio-ship) [![Test](https://github.com/tsouza/go-eosio-ship/actions/workflows/test.yml/badge.svg)](https://github.com/tsouza/go-eosio-ship/actions/workflows/test.yml)
 
 `go-eosio-ship` is a golang library built on top of [go-eosio](https://github.com/greymass/go-eosio) for connecting to and consuming from [EOSIO State History Plugin (SHiP)](https://developers.eos.io/manuals/eos/v2.1/nodeos/plugins/state_history_plugin/index).
 
@@ -11,8 +11,8 @@ import (
 	"bytes"
 	"fmt"
 	"github.com/greymass/go-eosio/pkg/chain"
-	"github.com/qryio/go-eosio-ship/pkg/ship"
-	"github.com/qryio/go-eosio-ship/pkg/types"
+	"github.com/tsouza/go-eosio-ship/pkg/ship"
+	"github.com/tsouza/go-eosio-ship/pkg/types"
 )
 
 func main() {

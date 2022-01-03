@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"github.com/fasthttp/websocket"
 	"github.com/greymass/go-eosio/pkg/chain"
-	"github.com/qryio/go-eosio-ship/pkg/types"
+	"github.com/tsouza/go-eosio-ship/pkg/types"
 	"github.com/valyala/fasthttp"
 )
 
