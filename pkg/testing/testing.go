@@ -37,7 +37,7 @@ func StartEosio(t *testing.T) (int, int) {
 		t.Fatalf("Could not connect to docker: %s", err)
 	}
 	res, err := pool.RunWithOptions(&dockertest.RunOptions{
-		Repository:   "qryio/eosio-dev",
+		Repository:   "tsouza/eosio-dev",
 		Tag:          "latest",
 		PortBindings: map[dc.Port][]dc.PortBinding{
 			"8080/tcp": {{ HostIP: "0.0.0.0", HostPort: "8080/tcp" }},

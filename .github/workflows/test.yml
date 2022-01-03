@@ -7,8 +7,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Pull qyrio/eosio-dev
-        run: docker pull qryio/eosio-dev:latest
+      - name: Pull tsouza/eosio-dev
+        run: docker pull tsouza/eosio-dev:latest
       - name: Install Go
         uses: actions/setup-go@v2
         with:
